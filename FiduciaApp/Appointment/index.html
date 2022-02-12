@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FiduciaApp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class = bigtext>APPOINTMENTS</h2>
+
+      <p class = text>EMAIL ADDRESS</p>
+      <input type="doctor" class="symptoms1" id="symptoms" name="email" placeholder = "E-mail" />
+
+      <p class = text>FIRST NAME</p>
+      <input type="doctor" class="symptoms1" id="symptoms" name="name1" placeholder = "First name" />
+
+      <p class = text>LAST NAME</p>
+      <input type="doctor" class="symptoms1" id="symptoms" name="name2" placeholder = "Last name" />
+
+      <p class = text>PREFERRED CLINIC</p>
+      <input type="doctor" class="symptoms1" id="symptoms" name="clinic" placeholder = "Clinic name" />
+
+      <p class = text>AGE</p>
+      <input type="doctor" class="symptoms1" id="symptoms" name="age" placeholder = "Age" />
+
+      <div class="select-box">
+        <div class="options-container">
+
+          <div class="option">
+            <input type="doctor" class="doctor" id="gp" name="category" />
+            <label for="gp">GP</label>
+          </div>
+
+          <div class="option">
+            <input type="doctor" class="doctor" id="primary care doctor" name="category" />
+            <label for="primary care doctor">Primary Care Doctor</label>
+          </div>
+
+          <div class="option">
+            <input type="doctor" class="doctor" id="specialist doctor" name="category" />
+            <label for="specialist doctor">Specialist Doctor</label>
+          </div>
+
+          <div class="option">
+            <input type="doctor" class="doctor" id="surgeon" name="category" />
+            <label for="surgeon">Surgeon</label>
+          </div>
+
+
+        </div>
+
+        <div class="selected">
+          Select what type of doctor you would like
+        </div>
+    </div>
+
+    <p class = text>SYMPTOMS</p>
+      <script type="text/javascript">
+        var i=0;
+        function new_btn(){    
+          i++;  
+          var node = document.createElement('div');        
+          node.innerHTML = '<input type="text" class="symptoms" id="testid' + i + '" name="textname' + i + '" placeholder = "Symptoms"><p></p><input type="text" class="under" id="days' + i + '" name="textname' + i + '" placeholder = "For how long? (Days)"><p></p><input type="text" class="under" id="severity' + i + '" name="textname' + i + '" placeholder = "Severity (1-10)">';       
+          document.getElementById('mycontainer').appendChild(node);    
+        }
+
+      </script>
+
+      <div id="mycontainer">
+        <input type="doctor" class="symptoms" id="symptoms" name="symptoms" placeholder = "Symptoms" />
+        <button type="button" class="btn-btn-primary" onclick="new_btn()" >Add</button>
+        <p></p>
+        <input type="doctor" class="under" id="days" name="days" placeholder = "For how long? (Days)" />
+        <p></p>
+        <input type="doctor" class="under" id="severity" name="severity" placeholder = "Severity (1-10)" />
+      </div>
+      
+      <p class = text>KEY CODES (from doctors)</p>
+      <input type="doctor" class="symptoms" id="symptoms" name="symptoms" placeholder = "e.g. T1419" />
+
+      <p class = text>EXTRA NOTES (if none put N/A)</p>
+      <input type="doctor" class="symptoms1" id="symptoms" name="notes" placeholder = "Notes" />
+
+      <p class = text>TOP 5 PREFERENCE DAYS</p>
+      <input type="doctor" class="symptoms1" id="symptoms" name="notes" placeholder = "e.g. 05/10/22" />
+      <input type="doctor" class="symptoms1" id="symptoms" name="notes" placeholder = "e.g. 05/10/22" />
+      <input type="doctor" class="symptoms1" id="symptoms" name="notes" placeholder = "e.g. 05/10/22" />
+      <input type="doctor" class="symptoms1" id="symptoms" name="notes" placeholder = "e.g. 05/10/22" />
+      <input type="doctor" class="symptoms1" id="symptoms" name="notes" placeholder = "e.g. 05/10/22" />
+      <p></p>
+      <script type="text/javascript">
+      function fun()
+      {
+    document.write("THANK YOU FOR BOOKING (E-mail confirmation will be sent soon)");
+      }
+    </script>
+    <body>
+      <button type="button" class="btn-btn-primary" onclick='fun()'>Submit</button>
+    </body>
+  </div>
+
+    
+    
+
+    <script src="main.js"></script>
+  </body>
+</html>
