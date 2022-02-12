@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.btn-btn-primary{
+    background: #8fbeca;
+    color: #ece7e2;
+    max-height: 10; 
+    text-size-adjust: 20;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+    margin-top: 12px;
+    padding: 10px;
+  }
+
+.symptoms{
+    background: #8fbeca;
+    color: #ece7e2;
+    max-height: 10; 
+    padding-right: 200px;
+    text-size-adjust: 20;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+    margin-top: 12px;
+    padding: 10px;
+    padding-right: 245px;
+  }
+
+
+.collapsible {
+  background-color: #8FBECA;
+  color: #1b535f;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #b8dbe4;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #71c2be;
+}
+</style>
+</head>
+<body>
+
+<h2>INFORMATION</h2>
+
+<button class="collapsible">Common Cold</button>
+<div class="content">
+  <p>The common cold is not actually that serious... is a common misconception. Penguins, dogs and even trees can contract it and if not contained, could wreak absolute disaster upon the world. That's why it's always recommended to eat well, sleep well and maintain great overall health. The common cold is common... wow- but remember common things can also be extremely dangerous. but don't worry too much of you have it- everyone does and most recover so well done for getting through this far and I hope you are doing great and will continue to do great!</p>
+</div>
+<button class="collapsible">Illness</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="collapsible">other Illness</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+<p class = text>Comments</p>
+
+<script type="text/javascript">
+  var i=0;
+  function new_btn(){    
+    i++;  
+    var node = document.createElement('div');        
+    node.innerHTML = '<input type="text" class="symptoms" id="testid' + i + '" name="textname' + i + '" placeholder = "Comment">';       
+    document.getElementById('mycontainer').appendChild(node);    
+  }
+
+</script>
+
+<div id="mycontainer">
+  <input type="doctor" class="symptoms" id="symptoms" name="symptoms" placeholder = "Comment" />
+  <button type="button" class="btn-btn-primary" onclick="new_btn()" >Add</button>
+</div>
+
+</body>
+</html>
