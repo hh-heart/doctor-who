@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,21 +10,29 @@
     <title>Clock</title>
 </head>
 <body>
-	<div>
-		<p>
-			<a class="btn btn-lg btn-primary" href="/MainMenu.aspx" role="button">Return to homepage</a>
-		</p>
-	</div>
-	<!--Main setup for the layout of the page-->
+
     <h1 class = "text">MEDICATION REMINDERS</h1>
     <section class="container">
         
-        <div id="clock"></div>
-        <input onchange="setAlarmTime(this.value)" name="alarmTime" type="datetime-local">
+        <!--Adding more input boxes for reminder days while allowing them to set alarms/reminders to take their medication-->
+   
+
+        <script type="text/javascript">
+            var i=0;
+            function new_btn(){    
+              i++;  
+              var node = document.createElement('div'); 
+              node.innerHTML = '<input onchange="setAlarmTime(this.value)" id  = "alarm-time' + i + '" name="alarmTime' + i + '" type = "datetime-local"><p></p><button type="button" class="button set-alarm" id="set-alarm' + i + '" name="alarm-set' + i + '" >Set Alarm</button>';       
+              document.getElementById('mycontainer').appendChild(node);    
+            }
+          </script>
+          <div id = "mycontainer">
+            <button type="button" class="btn-btn-primary" onclick="new_btn()" >Add</button>
+        <input onchange="setAlarmTime(this.value)" id  = "alarm-time" name="alarmTime" type="datetime-local">
         <div class="controls">
-            <button onclick= "setAlarm()" class="button set-alarm">Set alarm</button>
-            <button onclick= "clearAlarm()" class="button clear-alarm">Clear alarm</button>
+            <button onclick= "setAlarm()" id = "set-alarm" name = "alarm-set" class="button set-alarm">Set alarm</button>
         </div>
+    </div>
     </section>
     <script src="index.js"></script>
 </body>
