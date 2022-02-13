@@ -13,7 +13,7 @@ optionsList.forEach(o => {
     optionsContainer.classList.remove("active");
   });
 });
-
+// notifying the user that they have booked the appointment
 function notify(type,message){
   (()=>{
     let n = document.createElement("div");

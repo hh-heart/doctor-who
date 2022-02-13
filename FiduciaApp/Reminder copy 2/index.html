@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock</title>
+</head>
+<body>
+
+    <h1 class = "text">MEDICATION REMINDERS</h1>
+    <section class="container">
+        
+        <!--div id="clock"></div-->
+   
+
+        <script type="text/javascript">
+            var i=0;
+            function new_btn(){    
+              i++;  
+              var node = document.createElement('div'); 
+              node.innerHTML = '<input onchange="setAlarmTime(this.value)" id  = "alarm-time' + i + '" name="alarmTime' + i + '" type = "datetime-local"><p></p><button type="button" class="button set-alarm" id="set-alarm' + i + '" name="alarm-set' + i + '" >Set Alarm</button>';       
+              document.getElementById('mycontainer').appendChild(node);    
+            }
+          </script>
+          <div id = "mycontainer">
+            <button type="button" class="btn-btn-primary" onclick="new_btn()" >Add</button>
+        <input onchange="setAlarmTime(this.value)" id  = "alarm-time" name="alarmTime" type="datetime-local">
+        <div class="controls">
+            <button onclick= "setAlarm()" id = "set-alarm" name = "alarm-set" class="button set-alarm">Set alarm</button>
+        </div>
+    </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
