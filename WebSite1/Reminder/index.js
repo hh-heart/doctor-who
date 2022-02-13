@@ -27,6 +27,17 @@ function setAlarmTime(value) {
     alarmTime = value;
 }
 
+
+
+var i=0;
+function new_btn(){    
+  i++;  
+  var node = document.createElement('div'); 
+  node.innerHTML = '<input type="datetime-local" class="symptoms" id="alarm-time' + i + '" name="alarmTime' + i + '" ><p></p><button onclick= "setAlarm(i)" type="button" class="button set-alarm" id="set-alarm' + i + '" name="alarm-set' + i + '" >Set Alarm</button>';       
+  document.getElementById('mycontainer').appendChild(node);    
+}
+// for this section, javascript ends here
+
 function setAlarm() {
     if(alarmTime) {
         const current = new Date();
@@ -40,11 +51,6 @@ function setAlarm() {
     }
 }
 
-function clearAlarm() {
-    if (alarmTimeout) {
-        clearTimeout(alarmTimeout);
-        alert('Alarm cleared');
-    }
-}
+
 
 setInterval(updateTime, 1000);
